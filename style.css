@@ -1,0 +1,196 @@
+title { 
+color:#000080;
+background-color: #ffffff ;
+font-size: large;
+font-family: Georgia, "Arial”, Times, serif;
+}
+
+body {
+color: #000080;
+background-color: #ffffff ;
+font-family: Arial, "Arial", sans-serif;
+}
+
+p { 
+color: #000000;
+background-color: #ffffff ;
+font-size: medium;
+font-family: Georgia, "Arial", Times, serif;
+}
+
+ul{
+color: #525252;
+background-color: #ffffff ;
+font-size: medium;
+font-weight: normal;
+font-family: Georgia, "Arial”, Times, serif;
+}
+
+ol{
+color: #525252;
+background-color: #ffffff ;
+font-size: medium;
+font-weight: normal;
+font-family: Georgia, "Arial”, Times, serif;
+}
+
+h1 {
+color:#525252;
+font-size: larger;
+font-weight: bolder;
+font-family: Georgia, "Arial”, Times, serif;
+}
+
+h2 {
+color:#525252;
+//background-color: #98FB98;
+font-size: medium;
+font-weight: bold;
+font-family: Georgia, "Arial”, Times, serif;
+}
+
+h3 {
+color:#af111c;
+font-size: medium;
+font-family: Georgia, "Arial”, Times, serif;
+}
+
+table{
+color:#525252;
+font-size: medium;
+font-weight: normal;
+font-family: Georgia, "Arial”, Times, serif;
+}
+
+
+/*Animation codes*/
+
+.rotate{
+  width: 600px;
+  animation: rotation 6s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(220deg);
+  }
+}
+
+.rotate{
+  width: 100px;
+  animation: rotation 5s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(260deg);
+  }
+}
+
+
+/* Code for image position right for phys problems page*/
+<style>
+    img {
+        border: 8px solid black;
+    }
+    #content {
+        position: relative;
+    }
+    #content img {
+        position: absolute;
+        top: -40px;
+        right: 40px;
+    }
+    </style>
+
+
+/*CALCULATOR Styling*/
+
+body
+{
+background: #af111c;
+margin: 0;
+justify-content: center;
+}
+
+.container1
+{
+width: 92%;
+height: 35vh;
+padding: 10px;
+border-radius: 8px;
+}
+
+.display #screen
+{
+width: 39%;
+height: 45px;
+font-size: 16px;
+text-align: right;
+padding-right: 0.5em;
+background: #d3d3d3;
+color: #0000cd;
+border-radius : 6px;
+}
+
+.btns
+{
+width: 39%;
+height:  191px;
+margin-top: 1.0em;
+font-size: 14px;
+background: #d3d3d3;
+color: #0000cd;
+border-radius : 12px;
+}
+
+.btns.row button
+{
+width: 30%;
+height: 159px;
+font-size: 14px;
+margin: 5px;
+background: #d3d3d3;
+color: #0000cd;
+border-radius 4px;
+}
+
+#eval
+{
+background:#f0f8ff;
+color: #0000cd;
+}
+
+#ac
+{
+background:#f0f8ff ;
+color: #0000cd;
+}
+
+#CE
+{
+background: #f0f8ff;
+color: #0000cd;
+}
+
+
+
+footer {
+color:#525252;
+font-size: x-small;
+font-style: italic;
+font-family: Georgia, "Arial", Times, serif;
+}
+
+
+
+
+
+
+
+
+
