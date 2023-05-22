@@ -1,0 +1,423 @@
+<!DOCTYP html>
+<html>
+<link rel="stylesheet"type="text/css" href="style.css"originalAttribu
+te="href" originalPath="style.css"/>
+
+<hr>
+<nav>
+<table cellspacing="12" cellpadding="12" >
+<tr>
+<td> <a href = "index.html"> Home </a> </td>
+<td> <a href = "Physics Formulas.html"> Physics Formulas  </a> </td>
+<td>  <a  href = "Physics Problems.html"> Physics Problems </a> </td>
+<td> <a href = "Physics Solutions.html"> Physics Solutions </a> </td> 
+</tr>
+</table>
+</nav>
+<hr>
+
+<head>
+<header>
+
+ 
+<div id = " content"> <img src="Problemsolve_4.jpg" align = "right" width = 30% height= 30% class="ribbon" alt="" />
+</div>
+<img src  = "LOGO2.jpg" >
+<br>
+<h1> <font color = "#af111c "> SOLVING PROBLEMS... </font> </h1>
+<hr>
+<h2> <i> <small> "QUICK SCIENTIFIC CALCULATOR" </i></h2>
+
+<div id="content">
+<div class = "container1">
+<div class =  "display">
+<input id = "screen" type = "text" placeholder = "0">
+</div>
+
+<div class = "btns">
+<div class = "row">
+<button id = "CE"onclick= "backspc ()">  CE </button>
+<button class = "btn">          ( </button>
+<button class = "btn">          ) </button>
+<button class = "btn">        0 </button>
+<button class = "btn">       .  </button>
+<button class = "btn">       00 </button>
+<button class = "btn">       000 </button>
+<button class = "btn">       000000 </button>
+<button class = "btn">       + </button>
+<button class = "btn">       - </button>
+<button class = "btn">       * </button>
+<button class = "btn">       / </button>
+<button onclick = "percent ()">  % </button>
+<button onclick = "e ()">            e </button>
+<button onclick = "pi ()">           π </button>
+<button  id = "eval" onclick =  "screen.value=eval(screen.value)"> == </button>
+<button id = "AC"onclick = "screen.value = ''" >  AC  </button>
+</div>
+
+<div class = "row">
+<button class = "btn">       1 </button>
+<button class = "btn">       2 </button>
+<button class = "btn">       3 </button>
+<button class = "btn">       4 </button>
+<button class = "btn">       5 </button>
+<button class = "btn">       6 </button>
+<button class = "btn">       7 </button>
+<button class = "btn">       8 </button>
+<button class = "btn">       9 </button>
+<button class = "btn">       10 </button>
+<button class = "btn">       11 </button>
+<button class = "btn">       12 </button>
+<button class = "btn">       15 </button>
+<button class = "btn">       25 </button>
+<button class = "btn">       30 </button>
+<button class = "btn">       45 </button>
+<button class = "btn">       60 </button>
+</div>
+
+<div class = "row">
+<button class = "btn">       75 </button>
+<button class = "btn">       90 </button>
+<button class = "btn">       100 </button>
+<button class = "btn">       120 </button>
+<button class = "btn">       135 </button>
+<button class = "btn">       150 </button>
+<button class = "btn">       180 </button>
+<button class = "btn">       210 </button>
+<button class = "btn">       225 </button>
+<button class = "btn">       270 </button>
+<button class = "btn">       300 </button>
+<button class = "btn">       360 </button>
+<button class = "btn">       1000 </button>
+</div>
+
+<div class = "row">
+<button onclick= "Deg_to_Rad ()">    Deg → Rad </button>
+<button onclick= "Rad_to_Deg()">     Rad → Deg </button>
+<button onclick  = "Sqrt ()">        Sqrt  (√) </button>
+<button onclick  = "Cbrt ()">        Cbrt  (3√) </button>
+<button onclick= "log ()">           log </button>
+<button onclick= "Inverse ()">       1/x </button>
+<button onclick= "InverseSq ()">     1/(x^2) </button>
+<button onclick = "pow ()">          x^2 </button>
+<button onclick = "xcube ()">        x^3 </button>  
+</div>
+
+
+<div class = "row">
+<button onclick= "sinrad()">     sin    (Rad) </button>
+<button onclick = "cosrad ()">   cos    (Rad) </button>
+<button onclick = "tanrad()">    tan    (Rad) </button>
+<button onclick = "asinrad ()">  sin^-1  (Rad) </button>
+<button onclick = "acosrad ()">  cos^-1  (Rad) </button>
+<button onclick = "atanrad ()">  tan^-1  (Rad) </button>
+</div>
+
+<body>
+<script>
+
+var screen = document.querySelector('#screen' );
+var  btn = document.querySelectorAll ('.btn');
+
+for(item of btn)
+{ 
+    item.addEventListener('click', (e) =>
+ {
+    btntext = e.target.innerText;
+
+    if (btntext == 'x') 
+     {
+      btntext = '*';
+      }
+    if (btntext == '÷') 
+    {
+     btntext = '/';
+    }
+    screen.value+= btntext;
+});
+}
+ 
+function percent()
+{screen.value = screen.value /100;}
+
+function pow ()
+{screen.value = Math.pow (screen.value, 2);}
+
+function xcube ()
+{screen.value = screen.value * screen.value * screen.value;}
+
+function Inverse ()
+{screen.value = 1/ screen.value;}
+
+function InverseSq ()
+{screen.value = 1/ (screen.value * screen.value);}
+
+function Sqrt ()
+{screen.value = Math.sqrt (screen.value);}
+
+function Cbrt ()
+{screen.value = Math.cbrt (screen.value);}
+
+function backspc ()
+{screen.value = screen.value.substr(0, screen.value.length-1);}
+
+function Rad_to_Deg()
+{screen.value = screen.value *(180/3.14);}
+
+function Deg_to_Rad ()
+{screen.value = screen.value * (3.14/180);}
+
+function log ()
+{screen.value = Math.log (screen.value);}
+
+function pi ()
+{screen.value = 3.142;}
+
+function e ()
+{screen.value = 2.71828;}
+
+function sinrad ()
+{screen.value = Math.sin (screen.value);}
+
+function cosrad ()
+{screen.value = Math.cos (screen.value);}
+
+function tanrad ()
+{screen.value = Math.tan  (screen.value);}
+
+function asinrad ()
+{screen.value = Math.asin (screen.value);}
+
+function acosrad ()
+{screen.value = Math.acos (screen.value);}
+
+function atanrad ()
+{screen.value = Math.atan(screen.value);}
+
+function doMath()
+{
+var inputNum1=document.form1.input1.value;
+var inputNum2=document.form1.input2.value;
+var result = Math.pow(inputNum1, inputNum2);
+document.form1.answer.value = result;
+}
+
+function doMath1( )
+{
+var inputNum3=document.form1.input3.value;
+var result1 = (Math.round(10*inputNum3)/10).toFixed(1);
+document.form1.answer1.value = result1;
+}
+
+</script>
+
+<form name = form1>
+<input type ="button" value = "Input base →" >
+<input type="text" name = "input1" size = 17 >
+<input type ="button" value = "Input exponent →">
+<input type="text" name = "input2" size = 17 >
+<input type="button" value= "Click Calculate Power →" onClick= 'doMath()'>
+<input type="text" name ="answer" size = 48>
+<br>
+<input type ="button" value = "Input # →">
+<input type="text" name = "input3" size = 16 >
+<input type="button" value = "Round # (10th place)→" onClick= 'doMath1 ()'>
+<input type="text" name="answer1" size = 16 >
+<button type = "reset" size = 8 > Reset input values </button>
+</form>
+<br>
+<br>
+<br>
+
+</body>
+</header>
+</head>
+<hr>
+
+<h2>  <font color = "#af111c"> Chapter I:  1-D Motion: Displacement, Velocity & Acceleration </h2>
+<body>
+<ol>
+<li> A car is travelling from a starting point to a destination 60 miles to the East. After 20 mins, it has travelled 26.7 miles. What is the average velocity that it travelled
+ during this time interval? </li> <hr>
+
+<li> Edwin and Tom are riding in a kayak across a placid lake.The lake is 300 meters across and the boys are travelling at a average velocity of 2.24 m/s.
+      How long does it take them to reach the halfway point? </li> <hr>
+
+<li> What is the change in position or displacement if you start 100 m away from the starting point then you walk to 60 m from the starting point?</li> <hr>
+
+<li> An expert kayaker is traveling at 1.5 m/s to cross a lake and stops paddling.The water will apply a friction forces that will cause negative acceleration of -0.5 m/s^2 for 2 seconds.
+How far has the kayaker travel during the entire trip?  </li> <hr>
+
+<li> Jason hits a volleyball so that it moves with an initial velocity of 6.0 m/s straight upward. If the volleyball starts from 2.0 m above the floor, how long will it be in the air 
+before it strikes the floor. Answer = ∆t = 1.50 s </li> <hr>
+
+<li> During a race on level ground, Andrea runs with an average velocity of 6.02 m/s to the east. What is Andrea’s displacement after 137 s? </li> <hr>
+
+<li> A racing car reaches a speed of 42 m/s. It then begins a uniform negative acceleration, using its parachute and braking system, and comes to rest 5.5 s later. Find the distance that the car travels during braking.   </li> <hr>
+
+</ol>
+</body>
+
+
+
+
+<h2>  <font color = "#af111c"> Chapter II: Vectors & their Operations (1 & 2-dimensional) </h2>
+<body>
+<ol>
+
+<li>Find the components of the velocity of a helicopter traveling 95 km/h at an angle of 35° to the ground. Answer = vy = 54 km/h; vx = 78 km/h </li> <hr>
+
+<li> The Royal Gorge Bridge in Colorado rises 321 m above the Arkansas River. Suppose you kick a rock horizontally off the bridge. The magnitude of the rock’s horizontal displacement is 45.0 m. Find the speed at which the rock was kicked Answer = Vx = 5.56 m/s</li> <hr>
+
+<li> Explain steps for adding vectors algebraically? </li> <hr>
+</ol>
+</body>
+
+
+<h2> <font color = "#af111c"> Chapter III: Forces & Newton's Laws of Motion </h2>
+<body>
+<ol>
+<li> A man is pulling on his dog with a force of 70.0 N directed at an angle of +30.0° to the horizontal. Find the x and y components of this force. Answer = . Fx = 60.6 N; Fy = 35.0 N </li> <hr>
+   
+<li> The wind exerts a force of 452 N north on a sailboat, while the water exerts a force of 325 N west on the sailboat. Find the magnitude and direction of the net force on the sailboat.                     Answer = 557 N at 35.7° west of north </li> <hr>
+
+<li> Rob and Laura are studying across from each other at a wide table. Laura slides a 2.2 kg book towards Rob. If the net force acting on the book is 1.6 N to the right,  what is the book’s acceleration? a = 0.73 m/s2 to the right </li> <hr>
+
+<li> A student attaches a rope to a 20.0 kg box of books. He pulls with a force of 90.0 N at an angle of 30.0° with the horizontal. The coefficient of kinetic friction between the box 
+and the sidewalk is 0.500. Find the acceleration of the box.   Answer  a = 0.12 m/s2 to the right   </li> <hr>
+
+<li> A 24 kg crate initially at rest on a horizontal floor requires a 75 N horizontal force to set it in motion. Find the coefficient of static friction between the crate  and the floor.                         </li> Answer μs = 0.32 <hr>
+
+</ol>
+</body>
+
+
+<h2> <font color = "#af111c"> Chapter IV: Circular Motion &  Gravitation </h2>
+<body>
+<ol>
+
+<li> A test car moves at a constant speed  around a circular track. If the car is 48.2 m from the track’s center and has a centripetal acceleration of 8.05 m/s2, what is the car’s tangential speed?                         answer = vt = 19.7 m/s </li> <hr>
+
+<li>  A pilot is flying a small plane at 56.6 m/s in a circular path with a radius of 188.5 m. The centripetal force needed to maintain the plane’s circular motion is 1.89 × 104 N. What is the plane’s mass?                         m = 1110 kg </li>  <hr>
+
+<li> Find the distance between a 0.300 kg  billiard ball and a 0.400 kg billiard ball if the magnitude of the gravitational force between them is 8.92 × 10 -11 N. r = 3.00 × 10^–1 m   </li> <hr>
+
+<li> The color-enhanced image of Venus  was compiled from data taken by Magellan, the first planetary spacecraft to be launched from a space shuttle. During the spacecraft’s fifth orbit around Venus, Magellan traveled at a mean altitude of 361 km. If the orbit had been circular, what would Magellan’s period and speed have been?  answer Vt=7.12 × 103 m/s                          </li> <hr>
+
+</ol>
+</body>
+
+
+
+<h2> <font color = "#af111c"> Chapter V: Work, Energy & Power </h2>
+<body>
+<ol>
+
+<li> A How much work is done on a vacuum cleaner pulled 3.0 m by a force of 50.0 N at an angle of 30.0° above the horizontal?   W = 130 J   </li> <hr>
+
+<li>  A 7.00 kg bowling ball moves at 3.00 m/s. How fast must a 2.45 g table-tennis ball move in order to have the same kinetic energy as the bowling ball? Is this speed reasonable for a table-tennis ball in play? Answert = vt = 1.60 × 10^2 m/s, No, it would be very fast for a table -tennis ball< /li>  <hr>
+
+<li> Starting from rest, a child zooms down a frictionless slide from an initial height of 3.00 m. What is her speed at the bottom of the slide? Assume she has a mass of 25.0 kg. Answer =vf = 7.67 m/s   </li> <hr>
+
+<li> A 193 kg curtain needs to be raised 7.5 m, at constant speed, in as close to 5.0 s as possible. The power ratings for three motors are listed as 1.0 kW, 3.5 kW, and 5.5 kW. Which motor is best for the job. Answer = P = 2.8 × 10^3 W = 2.8 kW </li> <hr>
+
+</ol>
+</body>
+
+
+
+<h2> <font color = "#af111c"> Chapter VI: Heat & Thermodynamics </h2>
+<body>
+<ol>
+<li>  What are the equivalent Celsius and Kelvin temperatures of 50.0°F.    Answer 10degC and 283.2 K   </li> <hr>
+
+<li>  A 0.050 kg metal bolt is heated to an unknown initial temperature. It is then dropped into a calorimeter containing 0.15 kg of water with an initial temperature of 21.0°C. The bolt and the water then reach a final temperature of 25.0°C. If the metal has a specific heat capacity of 899 J/kg•°C, find the initial temperature of the metal < /li>  <hr>
+
+<li> A worker drives a 0.500 kg spike into a rail tie with a 2.50 kg sledgehammer. The hammer hits the spike with a speed of 65.0 m/s. If one-third of the  hammer’s kinetic energy is converted to the internal energy of the hammer and spike, how much does the total internal energy increase?  Answer : 1.76 × 10^3 J  </li> <hr>
+
+<li> An engine cylinder has a cross-sectional area of 0.010 m^2. How much work can be done by a gas in the cylinder if the gas exerts a constant pressure of 7.5 × 10^5 Pa on the piston and moves the piston a distance of 0.040 m </li> <hr>
+
+<li> A total of 135 J of work is done on a gaseous refrigerant as it undergoes compression. If the internal energy of the gas increases by 114 J during the process, what is the total amount of energy transferred as heat? Has energy been added to or removed from the refrigerant as heat? Answer   Q = -21J </li> <hr>
+
+<li> Find the efficiency of a gasoline engine that, during one cycle, receives 204 J of energy from combustion and loses 153 J as heat to the exhaust. Answer = eff = 0.250 </li>
+ <hr>
+</ol>
+</body>
+
+
+<h2> <font color = "#af111c"> Chapter VII: Light, Reflection & Refraction </h2>
+<body>
+<ol>
+
+<li> An object is 29 cm away from a converging mirror's surface along the principal axis. If the mirror's focal length is 9.50 cm, how far away is the corresponding image? Answer 14 cm </li> <hr>
+
+<li> Where would the image be located if the object is at 3.61 cm from a curved mirror and the focal length of the mirror is 2.34 cm? Please respond in 3 significant figures. 6.65 cm </li> <hr>
+
+<li>A satellite is placed 2.04*10^3 km from a flat mirror telescope. How far from the mirror would the virtual image be located?  2.04*10^3 km </li> <hr>
+
+<li>A billiards ball hits the side wall of the table at angle of 20o with respects to the side wall. What is the angle of reflection with respects to the normal line?  70 degree </li> <hr>
+
+<li>A candle is place 3.06 cm from a flat mirror. How far from would the virtual image be located from the mirror? 3.06 cm </li> <hr>
+
+<li>What is the frequency of a electromagnetic wave that has a wavelength of 125 nm?  2.4*10^15 Hz</li> <hr>
+
+<li>The AM radio band extends from 5.4 × 105 Hz to 1.7 × 106 Hz. What are the longest and shortest wavelengths in this frequency range?  λ1 = 5.6 × 102 m, λ2 = 1.8 × 102 m </li> <hr>
+
+<li>A concave spherical mirror has a focal length of 10.0 cm. Locate the image of a pencil that is placed  upright 30.0 cm from the mirror. Find the magnification of the image. Draw a ray diagram to confirm the answer.  Answer q = 15 cm, M = -0.05 </li> <hr>
+
+<li> A light ray of wavelength 589 nm  (produced by a sodium lamp) traveling through air strikes a  smooth, flat slab of crown glass at an angle of 30.0° to the normal. Find the angle of refraction, θr . Answer θr = 19.2° </li> <hr>
+
+<li>An object is placed 20.0 cm in front of a converging lens of focal length 10.0 cm. Find the image distance and the magnification. Describe the image. Answer 20.0 cm, M = -1.00; 
+real, inverted image </li> <hr>
+
+</ol>
+</body>
+
+
+<h2> <font color = "#af111c"> Chapter VIII:  Electric Current & Potential Difference </h2>
+<body>
+<ol>
+<li> Calculate the net charge on a substance consisting of a combination of 7.0 × 10^13 protons and 4.0 × 10^13electrons? Answer:4.8 × 10^−6 C.  </li> <hr>
+
+<li> A charge, q1 = 5.00 µC, is at the origin, and a second charge, q2 = −3.00 µC, is on the x-axis 0.800 m from the origin. Find the electric field at a point on the y-axis 0.500 m from the origin. Answer 1.66 × 10^5N/C, 81.1° above the positive x-axis.</li>     <hr>
+
+<li> The electron and proton of a hydrogen atom are separated, on average, by a distance of about 5.3 × 10^−11 m. Find the magnitudes of the electric force and the gravitational force that each particle exerts on the other. Given: r = 5.3 × 10^−11  Answer: Felectric = 8.2 × 10^−8 N; Fg = 3.6 × 10^−47 N </li> <hr>
+
+<li> A charge q1 = +7.00 µC is at the origin, and  a charge q2 = −5.00 µC is on the x-axis 0.300 m from the origin, as shown at right. Find the electric field strength at point P, which is on the y-axis 0.400 m from the origin. See diagram below: </li> <img src  = "EC sum1.png" > <hr>
+
+<li> A charge moves a distance of 2.0 cm in the direction of a uniform electric field whose magnitude is 215 N/C. As the charge moves, its electrical potential energy decreases by 
+6.9 × 10^–19 J. Find the charge on the moving particle. What is the potential difference between the two locations?  Answer:  q = 1.6 × 10^-19 C; ∆V = - 4.3 V </li> <hr>
+
+<li> A capacitor connected to a 12 V battery, holds 36 µC of charge on each plate. What is the capacitance of the  capacitor?  How much electrical potential energy is stored in the capacitor? Answer= C = 3.0 × 10^-6 F = 3.0 µF; PEelectric = 2.2 × 10^-4 J     </li> <hr>
+
+ <li> The current in a light bulb is 0.835 A. How long does it take for a total charge of 1.67 C to pass through the filament of the bulb? 
+Answer = 2 sec </li> <hr>
+
+<li> An electric space heater is connected across a 120 V outlet. The heater dissipates 1320 W of power in the form of electromagnetic radiation and heat. Calculate the resistance of the heater.
+Answer = R = 10.9 Ω </li> <hr>
+
+<li> The resistance of a steam iron is 19.0 Ω. What is the current in the iron when it is connected across a potential difference of 120 V? 
+Answer= 6.32 A </li> <hr>
+
+<li> A 9.0 V battery is connected to four light bulbs, as shown in figure. Find the total equivalent resistance and the current in the circuit. </li> <img src = "Circuit sum 3.png"> <hr>
+
+ <li> A 9.0 V battery is connected to four resistors, as shown in figure. Find the total equivalent resistance for the circuit and the total current in the circuit. </li> <img src = "Circuit sum 2.png"> <hr>
+
+<li> C Determine the total equivalent resistance of the complex circuit shown below: </li> <img src = "Circuit sum1.png"> <hr>
+</ol>
+</body>
+
+
+
+
+
+<p> <font color = "#af111c" <font family "Arial"> <strong> REFERENCES: Holt McDougal Physics, Serway, RA & Faughn, JS, 2012 AND Lecture Notes, GCISD </font>  </p>
+<hr>
+
+
+<footer> 
+Copyright: ET, 2022-2023 <br/>
+Email: tas7349@gcisdstudents.net
+</footer
+
+<html>
